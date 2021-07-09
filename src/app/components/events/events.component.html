@@ -1,0 +1,9 @@
+<p>Imprezy</p>
+
+<ul class="event">
+  <li *ngFor="let event of events">
+    {{event.name}}
+    <a routerLink="/detalisEvents/{{event.id}}">Szczególy</a>
+  </li>
+</ul>
+<a routerLink="/addEvents">Dodaj imprezę</a>
