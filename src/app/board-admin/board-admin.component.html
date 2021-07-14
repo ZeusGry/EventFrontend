@@ -1,0 +1,6 @@
+<h1>Lista użytkowników</h1>
+<ul class="navbar-nav mr-auto" routerLinkActive="active">
+  <li *ngFor="let user of userList" class="nav-item">
+    <a href="/user" class="nav-link"  routerLink="user">{{user.showName}}</a>
+  </li>
+</ul>

@@ -1,14 +1,74 @@
-<div *ngIf="event">
-  <h2>Nowy event</h2>
-  <label for="event-name">Nazwa eventu</label>
-  <input id="event-name" [(ngModel)]="event.name" />
-  <label for="event-acces">Publiczny event</label>
-  <input id="event-acces"  [(ngModel)]="event.acces">
-  <label for="event-email"></label>
-  <input type="email" id="event-email"  [(ngModel)]="event.email">
-  <label for="event-phone"></label>
-  <input id="event-phone" type="tel" [(ngModel)]="event.phoneNumber">
-  <label for="event-start"></label>
-  <input id="event-start" type="datetime-local" [(ngModel)]="event.startTime">
-  <button (click)="save()">Dodaj event</button>
+działa czy nie działa
+<div class="form-group">
+  <label>Nazwa</label>
+  <input
+    type="text"
+    [(ngModel)]="event.name"
+    required
+    #username="ngModel"
+  />
 </div>
+<div class="form-group">
+  <label>Start</label>
+  <input
+    type="datetime-local"
+    [(ngModel)]="event.startTime"
+    required
+    #username="ngModel"
+  />
+</div>
+<div class="form-group">
+  <label>Publiczny</label>
+  <input
+    type="checkbox"
+    [(ngModel)]="event.acces"
+    required
+    #username="ngModel"
+  />
+</div>
+<div class="form-group">
+  <label>email</label>
+  <input
+    type="email"
+    [(ngModel)]="event.email"
+    required
+    #username="ngModel"
+  />
+</div>
+<div class="form-group">
+  <label>telefon</label>
+  <input
+    type="text"
+    [(ngModel)]="event.phoneNumber"
+    required
+    #username="ngModel"
+  />
+</div>
+<div class="form-group">
+  <label>Miasto</label>
+  <input
+    type="text"
+    [(ngModel)]="event.adress.city"
+    required
+    #username="ngModel"
+  />
+</div>
+<div class="form-group">
+  <label>Ulica</label>
+  <input
+    type="text"
+    [(ngModel)]="event.adress.street"
+    required
+    #username="ngModel"
+  />
+</div>
+<div class="form-group">
+  <label>Numer budynku</label>
+  <input
+    type="text"
+    [(ngModel)]="event.adress.numberOfBuilding"
+    required
+    #username="ngModel"
+  />
+</div>
+<button (click)="save()">dodaj event</button>

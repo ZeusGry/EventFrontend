@@ -1,8 +1,8 @@
-import {User} from "./user";
+import {UserTemplate} from "./userTemplate";
 
-export interface Comment {
-  id: number
-  user: User
-  postTime: string
+export interface Comments {
+  id?: number
+  user: UserTemplate
+  postTime?: Date
   content: string
 }

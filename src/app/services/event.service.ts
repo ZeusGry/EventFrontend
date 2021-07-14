@@ -28,4 +28,19 @@ export class EventService {
     const url = `${this.eventUrl}/${id}`
     return this.http.get<EventTemplate>(url);
   }
+
+  getAcceptedEvents(id: number) {
+    const url = `${this.eventUrl}/accepted/${id}`
+    return this.http.get<EventTemplate>(url);
+  }
+
+  getNotAcceptedEvents(id: number) {
+    const url = `${this.eventUrl}/notaccepted/${id}`
+    return this.http.get<EventTemplate>(url);
+  }
+
+  getOrganizationEvents(id: number) {
+    const url = `${this.eventUrl}/organizer/${id}`
+    return this.http.get<EventTemplate>(url);
+  }
 }

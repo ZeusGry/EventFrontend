@@ -1,7 +1,6 @@
-export interface User {
-  id?: number
+export interface UserTemplate {
+  id: number
   login: string
-  password: string
   role: string
   email: string
   showName: string

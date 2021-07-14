@@ -1,9 +1,8 @@
-<p>Imprezy</p>
-
-<ul class="event">
-  <li *ngFor="let event of events">
+działają eventy
+<ul class="navbar-nav ml-auto">
+  <li class="nav-item" *ngFor="let event of events">
     {{event.name}}
-    <a routerLink="/detalisEvents/{{event.id}}">Szczególy</a>
+    <a href="/eventhDetalis/{{event.id}}" class="nav-link">szczegóły</a>
   </li>
 </ul>
-<a routerLink="/addEvents">Dodaj imprezę</a>
+

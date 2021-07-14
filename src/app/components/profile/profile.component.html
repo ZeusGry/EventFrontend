@@ -1,0 +1,29 @@
+<p>Profil użytkownika</p>
+<div class="container" *ngIf="user; else loggedOut">
+  <p>
+    <strong>Login:</strong>
+    {{ user.login }}
+  </p>
+  <p>
+    <strong>Nazwa użytkownika:</strong>
+    {{ user.showName }}
+  </p>
+  <p>
+    <strong>Email:</strong>
+    {{ user.email }}
+  </p>
+  <p>
+    <strong>Rola:</strong>
+    {{ user.role }}
+  </p>
+  <button *ngIf="true" (click)="deleteUser(user.id)">Usuń użytkownika</button>
+  <button *ngIf="true" (click)="hideEvents()">Ukryj imprezy</button>
+  <button *ngIf="true" (click)="showAccepteEvents(user.id)">Pokaż imprezy w których biorę udział</button>
+  <button *ngIf="true" (click)="showNotAcceptedEvents(user.id)">Pokaż imprezy do zaakceptowania</button>
+  <button *ngIf="true" (click)="showEventsWhichIOrganize(user.id)">Pokaż imprezy, które organizuję</button>
+
+</div>
+
+<ng-template #loggedOut>
+    <a href="/login">Zaloguj się</a>
+</ng-template>

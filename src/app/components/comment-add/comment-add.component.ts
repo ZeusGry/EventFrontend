@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Comments} from "../../interface/comment";
+import {TokenStorageService} from "../../_services/token-storage.service";
 
 @Component({
   selector: 'app-comment-add',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentAddComponent implements OnInit {
 
-  constructor() { }
+ comment: Comments ={content: "", user: this.token.getUser()}
+  constructor(private token: TokenStorageService) { }
 
   ngOnInit(): void {
+  }
+
+  send() {
   }
 
 }

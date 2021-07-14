@@ -16,7 +16,12 @@ export class EventsAddComponent implements OnInit {
     name: "",
     participantCount: 0,
     phoneNumber: "",
-    startTime: ""
+    startTime: "",
+    adress: {
+      city: "",
+      street: "",
+      numberOfBuilding: ""
+    }
   }
 
   constructor(

@@ -1,3 +1,5 @@
+import {Adress} from "./adress";
+
 export interface EventTemplate {
   id?: number
   name: string
@@ -7,4 +9,5 @@ export interface EventTemplate {
   phoneNumber: string
   participantCount: number
   commentCount: number
+  adress: Adress
 }

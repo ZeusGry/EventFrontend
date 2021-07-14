@@ -1,8 +1,29 @@
-<div *ngIf="event">
-  Nazwa: {{event.name}} Start:
-  {{event.startTime}} Email:
-  {{event.email}} Numer telefonu:
-  {{event.phoneNumber}} Liczba uczestników:
-  {{event.participantCount}} liczba komentarzy:
-  {{event.commentCount}}
+<p>Nazwa: {{event.name}}</p>
+<p>Czas rozpoczęcia: {{event.startTime}}</p>
+<p>Numer kontaktowy: {{event.phoneNumber}}</p>
+<p>Email kontaktowy: {{event.email}}</p>
+<p>Miasto: {{event.adress.city}}</p>
+<p>Ulica: {{event.adress.street}}</p>
+<p>Numer budynku: {{event.adress.numberOfBuilding}}</p>
+<p>Liczba uczestników: {{event.participantCount}}</p>
+<p>Liczba komentarzy: {{event.commentCount}}</p>
+<a href="comments" class="coments" routerLink="comments" ></a>
+<button *ngIf="event.commentCount>0 && comments.length==0" (click)="showComments()">Pokaż komentarze</button>
+<button *ngIf="comments.length >0" (click)="hideComments()">Ukryj komentarze</button>
+
+<div *ngIf="comments.length > 0">
+<ul class="comments" *ngFor="let comment of comments">
+  <li class="comment">
+    <div>
+      <p>{{comment.postTime}}</p>
+      <p>{{comment.user.showName}}</p>
+      <p>{{comment.content}}</p>
+    </div>
+  </li>
+</ul>
 </div>
+
+
+<!--<app-comment-add></app-comment-add>-->
+<a href="addComment" class="addComment" routerLink="addComment">Dodaj komentarz</a>
+<router-outlet></router-outlet>
