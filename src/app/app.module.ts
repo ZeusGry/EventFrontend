@@ -15,9 +15,6 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { EventsComponent } from './components/events/events.component';
 import { EventsAddComponent } from './components/events-add/events-add.component';
 import { EventsDetailComponent } from './components/events-detail/events-detail.component';
-import { CommentAddComponent } from './components/comment-add/comment-add.component';
-import { CommentComponent } from './components/comment/comment.component';
-
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
@@ -28,8 +25,6 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     EventsComponent,
     EventsAddComponent,
     EventsDetailComponent,
-    CommentAddComponent,
-    CommentComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,

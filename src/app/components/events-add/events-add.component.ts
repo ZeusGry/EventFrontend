@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {EventTemplate} from "../../interface/eventTemplate";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {EventService} from "../../services/event.service";
+import {EventsComponent} from "../events/events.component";
 
 @Component({
   selector: 'app-events-add',
@@ -24,13 +25,22 @@ export class EventsAddComponent implements OnInit {
     }
   }
 
+  organizators: string[] = [];
+  organizatorToAdd: string ="";
+
   constructor(
     private route:ActivatedRoute,
     private eventService: EventService,
+    private redirect: Router
   ) {
   }
 
   ngOnInit(): void {
+  }
+
+  public addOrganizators(): void{
+    this.organizators.push(this.organizatorToAdd);
+    this.organizatorToAdd = "";
   }
 
   private addEvent() {
@@ -39,6 +49,7 @@ export class EventsAddComponent implements OnInit {
 
   save(): void {
     this.addEvent();
+    this.redirect.navigate(['events']);
   }
 
 }

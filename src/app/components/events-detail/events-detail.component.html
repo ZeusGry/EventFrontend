@@ -16,14 +16,15 @@
   <li class="comment">
     <div>
       <p>{{comment.postTime}}</p>
-      <p>{{comment.user.showName}}</p>
+<!--      <p>{{comment.user.showName}}</p>-->
       <p>{{comment.content}}</p>
     </div>
   </li>
 </ul>
 </div>
-
-
+<div *ngIf="wantToAdd">
+<input type="text" [(ngModel)]="commentToAdd.content">
+<button (click)="sendComment()">Wyślij</button>
+</div>
 <!--<app-comment-add></app-comment-add>-->
-<a href="addComment" class="addComment" routerLink="addComment">Dodaj komentarz</a>
-<router-outlet></router-outlet>
+<button *ngIf="!wantToAdd" (click)="addComment()">Dodaj komentarz</button>

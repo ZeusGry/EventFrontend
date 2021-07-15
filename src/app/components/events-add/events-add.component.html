@@ -71,4 +71,16 @@ działa czy nie działa
     #username="ngModel"
   />
 </div>
+
+<div class="form-group">
+  <ul>
+    <li *ngFor="let organizator of organizators">
+      {{organizator}}
+    </li>
+
+  </ul>
+  <input [(ngModel)]="organizatorToAdd">
+  <button (click)="addOrganizators()">Dodaj kolejnego organizatora</button>
+</div>
+
 <button (click)="save()">dodaj event</button>
