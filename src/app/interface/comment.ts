@@ -2,7 +2,7 @@ import {UserTemplate} from "./userTemplate";
 
 export interface Comments {
   id?: number
-  user: UserTemplate
+  user?: UserTemplate
   postTime?: Date
   content: string
 }

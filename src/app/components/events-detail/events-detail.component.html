@@ -7,6 +7,9 @@
 <p>Numer budynku: {{event.adress.numberOfBuilding}}</p>
 <p>Liczba uczestników: {{event.participantCount}}</p>
 <p>Liczba komentarzy: {{event.commentCount}}</p>
+<p>dostęp: {{event.acces}}</p>
+<button (click)="join()" *ngIf="!notParticipate">Weź udział</button>
+<button (click)="quit()" *ngIf="notParticipate">Zrezygnuj</button>
 <a href="comments" class="coments" routerLink="comments" ></a>
 <button *ngIf="event.commentCount>0 && comments.length==0" (click)="showComments()">Pokaż komentarze</button>
 <button *ngIf="comments.length >0" (click)="hideComments()">Ukryj komentarze</button>
@@ -15,8 +18,8 @@
 <ul class="comments" *ngFor="let comment of comments">
   <li class="comment">
     <div>
-      <p>{{comment.postTime}}</p>
-<!--      <p>{{comment.user.showName}}</p>-->
+      <p *ngIf="comment.user != null">Użytkownik: {{comment.user.showName}}</p>
+      <p *ngIf="comment.postTime != null">{{comment.postTime.toString().slice(0,10)}} {{comment.postTime.toString().slice(11,16)}}</p>
       <p>{{comment.content}}</p>
     </div>
   </li>

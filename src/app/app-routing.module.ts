@@ -7,22 +7,24 @@ import {HomeComponent} from './home/home.component';
 import {ProfileComponent} from './components/profile/profile.component';
 import {BoardUserComponent} from './board-user/board-user.component';
 import {BoardModeratorComponent} from './board-moderator/board-moderator.component';
-import {BoardAdminComponent} from './board-admin/board-admin.component';
+import {ListOdUsers} from './board-admin/list-od-users.component';
 import {EventsComponent} from "./components/events/events.component";
 import {EventsAddComponent} from "./components/events-add/events-add.component";
 import {EventsDetailComponent} from "./components/events-detail/events-detail.component";
+import {OrganizerRegComponent} from "./components/organizer-reg/organizer-reg.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'profile', component: ProfileComponent},
+  {path: 'profile/:id', component: ProfileComponent},
   {path: 'user', component: BoardUserComponent},
   {path: 'mod', component: BoardModeratorComponent},
-  {path: 'admin', component: BoardAdminComponent},
+  {path: 'userList', component: ListOdUsers},
   {path: 'addEvent', component: EventsAddComponent},
   {path: 'events', component: EventsComponent},
   {path: 'eventhDetalis/:id', component: EventsDetailComponent},
+  {path: 'register/:id', component: OrganizerRegComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoardAdminComponent } from './board-admin.component';
+import { ListOdUsers } from './list-od-users.component';
 
 describe('BoardAdminComponent', () => {
-  let component: BoardAdminComponent;
-  let fixture: ComponentFixture<BoardAdminComponent>;
+  let component: ListOdUsers;
+  let fixture: ComponentFixture<ListOdUsers>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoardAdminComponent ]
+      declarations: [ ListOdUsers ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BoardAdminComponent);
+    fixture = TestBed.createComponent(ListOdUsers);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

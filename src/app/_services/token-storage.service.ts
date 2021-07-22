@@ -18,6 +18,8 @@ export class TokenStorageService {
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }
 
+
+
   public getToken(): string | null {
     return window.sessionStorage.getItem(TOKEN_KEY);
   }
@@ -32,11 +34,13 @@ export class TokenStorageService {
     if (user) {
       return JSON.parse(user);
     }
-
     return {};
   }
 
   getId() {
-    return 1;
+    const user = window.sessionStorage.getItem(USER_KEY);
+    if (user) {
+      return JSON.parse(user).id;
+    }
   }
 }

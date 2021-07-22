@@ -9,15 +9,14 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { ListOdUsers } from './board-admin/list-od-users.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { EventsComponent } from './components/events/events.component';
 import { EventsAddComponent } from './components/events-add/events-add.component';
 import { EventsDetailComponent } from './components/events-detail/events-detail.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { UserListComponent } from './components/user-list/user-list.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { OrganizerRegComponent } from './components/organizer-reg/organizer-reg.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +28,10 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     RegisterComponent,
     HomeComponent,
     ProfileComponent,
-    BoardAdminComponent,
+    ListOdUsers,
     BoardModeratorComponent,
     BoardUserComponent,
-    UserListComponent,
-    UserProfileComponent
+    OrganizerRegComponent,
   ],
   imports: [
     BrowserModule,

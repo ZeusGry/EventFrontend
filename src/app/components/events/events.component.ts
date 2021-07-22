@@ -21,6 +21,7 @@ export class EventsComponent implements OnInit {
   }
 
   private getEvents() {
-    this.eventService.getEvents().subscribe(events => this.events=events);
+    this.eventService.getEvents().subscribe(events => {this.events=events;
+    console.log("Odbierany event " + events)});
   }
 }

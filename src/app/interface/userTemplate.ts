@@ -1,7 +1,9 @@
+import {role} from "./role";
+
 export interface UserTemplate {
   id: number
   login: string
-  role: string
+  roles: role[]
   email: string
   showName: string
 }

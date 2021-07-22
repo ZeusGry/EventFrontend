@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {EventTemplate} from "../interface/eventTemplate";
 import {UserTemplate} from "../interface/userTemplate";
 
 @Injectable({
@@ -29,5 +28,9 @@ export class ProfileService {
   deleteUser(id: number) {
     const url = `${this.userUrl}/${id}`
     return this.http.delete<UserTemplate>(url);
+  }
+
+  updateRole(user: UserTemplate) {
+    return this.http.patch(this.userUrl, user)
   }
 }

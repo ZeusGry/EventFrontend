@@ -1,3 +1,5 @@
+
+
 <div class="col-md-12">
   <div class="card card-container">
     <img
@@ -5,6 +7,7 @@
       src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
       class="profile-img-card"
     />
+    <h3>{{form.email}}</h3>
     <form
       *ngIf="!isSuccessful"
       name="form"
@@ -53,24 +56,6 @@
           </div>
           <div *ngIf="username.errors.maxlength">
             Nick must be at most 20 characters
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input
-          type="email"
-          class="form-control"
-          name="email"
-          [(ngModel)]="form.email"
-          required
-          email
-          #email="ngModel"
-        />
-        <div class="alert-danger" *ngIf="email.errors && f.submitted">
-          <div *ngIf="email.errors.required">Email is required</div>
-          <div *ngIf="email.errors.email">
-            Email must be a valid email address
           </div>
         </div>
       </div>

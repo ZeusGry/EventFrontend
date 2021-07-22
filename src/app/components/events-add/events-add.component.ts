@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {EventTemplate} from "../../interface/eventTemplate";
 import {ActivatedRoute, Router} from "@angular/router";
 import {EventService} from "../../services/event.service";
-import {EventsComponent} from "../events/events.component";
 
 @Component({
   selector: 'app-events-add',
@@ -44,12 +43,20 @@ export class EventsAddComponent implements OnInit {
   }
 
   private addEvent() {
-    this.eventService.addEvent(this.event).subscribe();
+    this.eventService.addEvent(this.event).subscribe(event => {
+      console.log(event.id)
+      if (event.id != null) {
+        this.setOrganizators(event.id)
+      }
+    });
+  }
+
+  private setOrganizators(eventId: number) {
+   this.eventService.setOrganizators(eventId, this.organizators).subscribe(() => this.redirect.navigate(['events']))
   }
 
   save(): void {
     this.addEvent();
-    this.redirect.navigate(['events']);
   }
 
 }

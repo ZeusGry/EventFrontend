@@ -27,7 +27,8 @@ export class EventsDetailComponent implements OnInit {
   };
   comments: Comments[] = [];
   wantToAdd: boolean = false;
-  commentToAdd: Comments = {content: "", user: this.token.getUser()}
+  commentToAdd: Comments = {content: ""}
+  notParticipate: boolean = true;
 
 
   constructor(
@@ -40,6 +41,17 @@ export class EventsDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEvent();
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!);
+    this.getComments(id)
+
+    this.eventService.isParticipate(id).subscribe(present => {
+      this.notParticipate = present.present
+    })
+  }
+
+  private getComments(id: number) {
+    this.commentService.getComments(id)
+      .subscribe(comments => this.comments = comments)
   }
 
   private getEvent(): void {
@@ -61,11 +73,31 @@ export class EventsDetailComponent implements OnInit {
 
   sendComment() {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!);
-    this.commentService.send(this.commentToAdd, id).subscribe(comment => this.comments.push(comment));
-    this.event.commentCount++;
+    this.commentService.send(this.commentToAdd, id).subscribe(comment => {
+      this.comments.push(comment)
+      this.event.commentCount++;
+    });
   }
 
   addComment() {
     this.wantToAdd = !this.wantToAdd;
+  }
+
+  join() {
+    const idEvent = parseInt(this.route.snapshot.paramMap.get('id')!);
+    const idUser = this.token.getId()
+    this.eventService.joinEvent(idUser, idEvent).subscribe(() => {
+      this.notParticipate = !this.notParticipate
+      this.event.participantCount++
+    })
+  }
+
+  quit() {
+    const idEvent = parseInt(this.route.snapshot.paramMap.get('id')!);
+    const idUser = this.token.getId()
+    this.eventService.quitEvent(idUser, idEvent).subscribe(() => {
+      this.notParticipate = !this.notParticipate
+      this.event.participantCount--
+    })
   }
 }

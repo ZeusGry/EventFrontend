@@ -5,10 +5,10 @@ import {ProfileService} from "../services/profile.service";
 
 @Component({
   selector: 'app-board-admin',
-  templateUrl: './board-admin.component.html',
-  styleUrls: ['./board-admin.component.css']
+  templateUrl: './list-od-users.component.html',
+  styleUrls: ['./list-od-users.component.css']
 })
-export class BoardAdminComponent implements OnInit {
+export class ListOdUsers implements OnInit {
 
   userList: UserTemplate[] | undefined
 

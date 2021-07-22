@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserListComponent } from './user-list.component';
+import { OrganizerRegComponent } from './organizer-reg.component';
 
-describe('UserListComponent', () => {
-  let component: UserListComponent;
-  let fixture: ComponentFixture<UserListComponent>;
+describe('OrganizerRegComponent', () => {
+  let component: OrganizerRegComponent;
+  let fixture: ComponentFixture<OrganizerRegComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserListComponent ]
+      declarations: [ OrganizerRegComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserListComponent);
+    fixture = TestBed.createComponent(OrganizerRegComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

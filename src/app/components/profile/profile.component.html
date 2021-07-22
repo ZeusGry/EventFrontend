@@ -14,16 +14,36 @@
   </p>
   <p>
     <strong>Rola:</strong>
-    {{ user.role }}
   </p>
-  <button *ngIf="true" (click)="deleteUser(user.id)">Usuń użytkownika</button>
-  <button *ngIf="true" (click)="hideEvents()">Ukryj imprezy</button>
-  <button *ngIf="true" (click)="showAccepteEvents(user.id)">Pokaż imprezy w których biorę udział</button>
-  <button *ngIf="true" (click)="showNotAcceptedEvents(user.id)">Pokaż imprezy do zaakceptowania</button>
-  <button *ngIf="true" (click)="showEventsWhichIOrganize(user.id)">Pokaż imprezy, które organizuję</button>
+  <div *ngFor="let role of user.roles">
+    <p>{{role.name}}</p>
+  </div>
 
+  <div *ngIf="showAdminBoard">
+    <button (click)="deleteUser(user.id)">Usuń użytkownika</button>
+    <button *ngIf="!changeRoles" (click)="changeRoles = !changeRoles">Zmień role użytkownika</button>
+    <div *ngIf="changeRoles">
+      Użytkownik
+      <input type="checkbox" [(ngModel)]="user_role">
+      Moderator
+      <input type="checkbox" [(ngModel)]="moderator_role">
+      Administrator
+      <input type="checkbox" [(ngModel)]="admin_role">
+      <button (click)="uodateRoles()">Uaktualnij role</button>
+    </div>
+  </div>
+
+  <div *ngIf="isOwner">
+    <button  (click)="hideEvents()" *ngIf="events.length != 0">Ukryj imprezy</button>
+    <button  (click)="showAccepteEvents(user.id)">Pokaż imprezy w których biorę udział</button>
+    <button  (click)="showNotAcceptedEvents(user.id)">Pokaż imprezy do zaakceptowania</button>
+    <button  (click)="showEventsWhichIOrganize(user.id)">Pokaż imprezy, które organizuję</button>
+  </div>
+  <ul *ngFor="let event of events">
+    <li>{{event.name}}</li>
+  </ul>
 </div>
 
 <ng-template #loggedOut>
-    <a href="/login">Zaloguj się</a>
+  <a href="/login">Zaloguj się</a>
 </ng-template>
