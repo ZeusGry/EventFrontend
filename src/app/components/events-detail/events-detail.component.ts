@@ -13,7 +13,6 @@ import {TokenStorageService} from "../../_services/token-storage.service";
 })
 export class EventsDetailComponent implements OnInit {
   event: EventTemplate = {
-    acces: false,
     commentCount: 0,
     email: "", name: "",
     participantCount: 0,

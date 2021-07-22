@@ -10,7 +10,6 @@ import {EventService} from "../../services/event.service";
 })
 export class EventsAddComponent implements OnInit {
   event: EventTemplate = {
-    acces: false,
     commentCount: 0,
     email: "",
     name: "",

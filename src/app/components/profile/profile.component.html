@@ -36,7 +36,6 @@
   <div *ngIf="isOwner">
     <button  (click)="hideEvents()" *ngIf="events.length != 0">Ukryj imprezy</button>
     <button  (click)="showAccepteEvents(user.id)">Pokaż imprezy w których biorę udział</button>
-    <button  (click)="showNotAcceptedEvents(user.id)">Pokaż imprezy do zaakceptowania</button>
     <button  (click)="showEventsWhichIOrganize(user.id)">Pokaż imprezy, które organizuję</button>
   </div>
   <ul *ngFor="let event of events">
