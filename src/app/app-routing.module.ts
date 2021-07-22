@@ -6,8 +6,7 @@ import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {ProfileComponent} from './components/profile/profile.component';
 import {BoardUserComponent} from './board-user/board-user.component';
-import {BoardModeratorComponent} from './board-moderator/board-moderator.component';
-import {ListOdUsers} from './board-admin/list-od-users.component';
+import {ListOdUsers} from './user-list/list-od-users.component';
 import {EventsComponent} from "./components/events/events.component";
 import {EventsAddComponent} from "./components/events-add/events-add.component";
 import {EventsDetailComponent} from "./components/events-detail/events-detail.component";
@@ -19,7 +18,6 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'profile/:id', component: ProfileComponent},
   {path: 'user', component: BoardUserComponent},
-  {path: 'mod', component: BoardModeratorComponent},
   {path: 'userList', component: ListOdUsers},
   {path: 'addEvent', component: EventsAddComponent},
   {path: 'events', component: EventsComponent},

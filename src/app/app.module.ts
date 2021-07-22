@@ -9,8 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { ListOdUsers } from './board-admin/list-od-users.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import { ListOdUsers } from './user-list/list-od-users.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { EventsComponent } from './components/events/events.component';
 import { EventsAddComponent } from './components/events-add/events-add.component';
@@ -29,7 +28,6 @@ import { OrganizerRegComponent } from './components/organizer-reg/organizer-reg.
     HomeComponent,
     ProfileComponent,
     ListOdUsers,
-    BoardModeratorComponent,
     BoardUserComponent,
     OrganizerRegComponent,
   ],
