@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
   roles: string[] = [];
   isOwner: boolean = false;
   showAdminBoard = false;
+  showModeratorBoard = false;
   isLoggedIn = false;
   changeRoles = false;
   user_role = false
@@ -45,6 +46,9 @@ export class ProfileComponent implements OnInit {
 
     if (this.isLoggedIn) {
       this.showAdminBoard = this.tokenStorage.getUser().roles.includes('ROLE_ADMIN');
+    }
+    if (this.isLoggedIn) {
+      this.showModeratorBoard = this.tokenStorage.getUser().roles.includes('ROLE_MODERATOR');
     }
 
   }

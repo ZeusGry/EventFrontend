@@ -23,23 +23,26 @@
     <button (click)="deleteUser(user.id)">Usuń użytkownika</button>
     <button *ngIf="!changeRoles" (click)="changeRoles = !changeRoles">Zmień role użytkownika</button>
     <div *ngIf="changeRoles">
-      Użytkownik
-      <input type="checkbox" [(ngModel)]="user_role">
-      Moderator
-      <input type="checkbox" [(ngModel)]="moderator_role">
-      Administrator
-      <input type="checkbox" [(ngModel)]="admin_role">
+      <p>Użytkownik
+      <input type="checkbox" [(ngModel)]="user_role"></p>
+      <p>Moderator
+      <input type="checkbox" [(ngModel)]="moderator_role"></p>
+      <p>Administrator
+        <input type="checkbox" [(ngModel)]="admin_role"></p>
       <button (click)="uodateRoles()">Uaktualnij role</button>
     </div>
   </div>
 
   <div *ngIf="isOwner">
-    <button  (click)="hideEvents()" *ngIf="events.length != 0">Ukryj imprezy</button>
-    <button  (click)="showAccepteEvents(user.id)">Pokaż imprezy w których biorę udział</button>
-    <button  (click)="showEventsWhichIOrganize(user.id)">Pokaż imprezy, które organizuję</button>
+    <button (click)="hideEvents()" *ngIf="events.length != 0">Ukryj imprezy</button>
+    <button (click)="showAccepteEvents(user.id)">Pokaż imprezy w których biorę udział</button>
+    <button (click)="showEventsWhichIOrganize(user.id)" *ngIf="showModeratorBoard">Pokaż imprezy, które organizuję
+    </button>
   </div>
   <ul *ngFor="let event of events">
-    <li>{{event.name}}</li>
+    <li>
+      <a href="/eventhDetalis/{{event.id}}" class="nav-link">{{event.name}}</a>
+    </li>
   </ul>
 </div>
 
